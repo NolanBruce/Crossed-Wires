@@ -1,0 +1,305 @@
+%% LyX 2.4.4 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[american,twocolumn]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\newcommand{\noun}[1]{\textsc{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+% Enumerate numbering 
+\usepackage{enumitem}
+
+\setlist[enumerate,1]{%
+  label=\thesubsubsection.\arabic*,
+  ref=\thesubsubsection.\arabic*,
+  leftmargin=*,
+}
+
+\makeatletter
+\@addtoreset{enumi}{subsubsection}
+\makeatother
+
+% Footer 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{datetime2}
+\DTMsetdatestyle{iso}
+
+\fancyhf{} % clear all header/footer fields
+
+\fancyfoot[C]{Rulebook v0.2.1 — \DTMtoday}
+\fancyfoot[R]{\thepage}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+
+\section{Overview}
+
+\subsection{Description}
+\begin{enumerate}
+\item This is an economic, network-building game. Players control shares
+in companies and act for those companies , expanding their network
+to increase their share value and to funnel money back into the players'
+own pockets. Shares are auctioned throughout the game. Shifting cross-investments
+result in shared and conflicting incentives across the table. The
+game end is triggered when either a) all shares of one company have
+been auctioned off or b) all players pass consecutively.
+\end{enumerate}
+
+\subsection{Key Concepts}
+
+\subsubsection{Map}\label{subsec:Map}
+\begin{enumerate}
+\item The map is made up of abstracted \noun{Hexes}.There are four types
+of hexes: starting (black), mountain (gray), standard (white), and
+city (yellow).
+\end{enumerate}
+
+\subsubsection{Network}\label{subsec:Network}
+\begin{enumerate}
+\item A company-owned hex is indicated by a stack of 1-5 chips with the
+controlling company’s cube on top. A company’s \noun{Network} is the
+collection of all hexes they own.
+\item A given hex’s value\label{enu:Hex-value} is equal to the number of
+chips on the hex.
+\item All companies are considered to own the starting (central, black)
+hex, which is considered to have a hex value of 5.
+\item Besides the starting hex, only one company may own any given hex.
+I.e., a standard or city hex may only be part of one company’s network.
+\item The term \noun{Network Value\label{enu:Network-Value}} is used to
+describe the combined value of a collection of hexes.
+\item A company is considered to have access to a hex if the hex is adjacent
+to any hex in the company’s network.
+\item A company may lease network (\ref{enu:Leasing-Network}) from one
+or more other companies to gain access to a hex it otherwise does
+not have access to.
+\end{enumerate}
+
+\subsubsection{Shares}\label{subsec:Shares}
+\begin{enumerate}
+\item A company's \noun{Share Value\label{enu:Share-value}} is equal to
+the total network value (\ref{enu:Network-Value}) of all hexes owned
+by the company. E.g., at the start of the game, all companies have
+a share value of \$5.
+\item \label{enu:Share-auctioned-status}Each Share is dual sided. One side
+has an empty circle on it, indicating it is unauctioned. The opposite
+side has a red circle with a bar through it, indicating it has been
+auctioned already. A share that has been auctioned may not be auctioned
+again.
+\item \label{enu:Share-control-own}A player \noun{controls} all shares
+in their player area, but only \noun{own} shares on their auctioned
+side.
+\end{enumerate}
+
+\section{Setup}\label{sec:Setup}
+
+\subsection{Map Setup}
+\begin{enumerate}
+\item Place the map in the center of the table.
+\end{enumerate}
+
+\subsection{Company Setup}
+\begin{enumerate}
+\item For each player in the game, prepare one company
+\begin{enumerate}
+\item Put one share above the map to act as the company charter.
+\item Place \$5 on the company charter as the company’s starting treasury.
+\end{enumerate}
+\item Return remaining companies to the box. They will not be used this
+game.
+\end{enumerate}
+
+\subsection{Player Setup}\label{subsec:Player-Setup}
+\begin{enumerate}
+\item Each player takes all 5 remaining shares of one company in the game
+and spreads them out in front of them, 4 on their unauctioned side
+and 1 on its auctioned side (\ref{enu:Share-auctioned-status}).
+\item Each player takes \$25 in starting cash.
+\end{enumerate}
+
+\section{Gameplay}\label{sec:Gameplay}
+
+\subsection{Turn Structure}
+\begin{enumerate}
+\item On a turn, a player may take one of the following actions:
+\begin{enumerate}
+\item Auction (\ref{subsec:Auction})
+\item Act for a Company (\ref{subsec:Act-for-company})
+\item Pass (\ref{subsec:Pass})
+\end{enumerate}
+\item After a player has taken one of these, the player to their left takes
+a turn.
+\item Play continues in this clockwise fashion until the Game End is triggered
+(\ref{subsec:Game-End-Triggers}).
+\end{enumerate}
+
+\subsection{Auction}\label{subsec:Auction}
+\begin{enumerate}
+\item When auctioning, the turn player takes either one unauctioned share
+they control (\ref{enu:Share-control-own}) or any share in the bank
+pool and starts an auction.
+\item The turn player is considered the current bidder and may optionally
+make an initial bid.
+\begin{enumerate}
+\item The minimum bid must be at least the given company’s share value (\ref{enu:Share-value})
+and no greater than the turn player’s cash.
+\item The turn player does not have to place a bid to start an auction.
+\end{enumerate}
+\item The player to the left of the current bidder now may either place
+a bid or pass.
+\begin{enumerate}
+\item If no bid has been placed yet, the new bid must be at least the given
+company’s share value (\ref{enu:Share-value}).
+\item If a bid has already been placed, the new bid must be greater than
+the current bid.
+\item Players cannot bid more than they have in cash.
+\item If a player passes, they cannot join back in on subsequent rounds.
+\end{enumerate}
+\item Play continues in this clockwise fashion, until either all players
+have passed or all players besides one bidder have passed.
+\begin{enumerate}
+\item If all players pass (no bids are placed), put the auction share in
+the bank, and . Do not flip the share over to its auctioned side as
+it may still be auctioned in the future.
+\item If only one bidder remains, the winning bidder (the player who last
+bid, the only player who did not pass) wins the auction.
+\begin{enumerate}
+\item The winning player takes the auctioned share, flips it over to indicate
+it has been auctioned, and places it in front of them with the other
+shares they control.
+\item If the share was auctioned from the bank pool, place the winning bid
+into the bank. Otherwise, place the winning bid into the auctioned
+share’s company’s treasury.
+\end{enumerate}
+\end{enumerate}
+\item If the auctioned share was the last auctioned share for a given company,
+the game end is triggered (\ref{subsec:Game-End-Triggers}).
+\end{enumerate}
+
+\subsection{Act for a Company}\label{subsec:Act-for-company}
+\begin{enumerate}
+\item When acting for a company, a player \noun{Expands Network} for that
+company, potentially triggering \noun{payouts} for that company and/or
+any company they leased network from, and finally perform \noun{upkeep}.
+\item In order to act for a company, a player must control (\ref{enu:Share-control-own})
+at least one share in said company. A player may only act for a single
+company on a given turn. When acting for a company, all money spent
+must come from the given company’s treasury. If the company cannot
+afford an action, it cannot take said action.
+\item To expand network onto a given hex, the player choose a desired hex
+value (\ref{enu:Hex-value}) for the target hex and pays \$5 times
+that value to the bank from the acting company’s treasury. Place chips
+on the hex to indicate the hex value (e.g., 2 chips for a 2-value
+hex), and place a cube of the acting company on top of the chip stack
+to indicate ownership. In order to expand to hexes a company does
+not immediately have access to, it may lease network from a combination
+of other companies (\ref{enu:Leasing-Network}). If the company has
+not reached its expansion limit (\ref{enu:Expansion-limit}), it may
+continue to expand.
+\item If the company has expanded onto a city hex, all owners of shares
+of the acting company receive an immediate payout per share equal
+to the given cities hex value (\ref{enu:Hex-value}). E.g., if a company
+expands onto a city hex, chooses a hex value of 2, and Player A has
+4 shares in the given company, they would receive a payout of \$8
+(4 x \$2).
+\item Some restrictions apply:
+\begin{enumerate}
+\item A company may only expand onto unowned hexes. That is, a company may
+not expand onto a hex already part of its own network (can’t increase
+the value of an already owned hex), nor can it expand onto a hex owned
+by another company (not to be confused with leasing network from another
+company).
+\item \label{enu:Expansion-limit}The network value of the newly expanded
+network (i.e., the value of the network built this turn, not the total
+company network) may not be greater than the number of shares the
+given company has auctioned so far this game. E.g., at the start of
+the game, prior to any auctions, any given company may only expand
+to a single 1-value hex.
+\item Mountain hexes can never be part of a network (cannot be expanded
+onto).
+\item A company may only expand onto one hex type (standard or city) on
+a given turn.
+\end{enumerate}
+\item Leasing Network\label{enu:Leasing-Network}
+\begin{enumerate}
+\item A company may lease network from other companies in order to expand
+onto a hex it otherwise does not have access to by tracing a route
+from any part of its own network through the leased network(s) to
+an empty hex.
+\item The route through the leased network(s) must follow the shortest route
+from any combination of companies to the target hex. Therefore, if
+a company already has access to a given hex, it may not lease network
+to said hex.
+\item The cost of leasing network is the combined network value of the hexes
+used. The company must pay this value to the bank. If they cannot,
+they cannot take the action. If after leasing network, the company
+does not have enough money to expand onto the target hex, they cannot
+take that action.
+\item After leasing network, all owners of shares for companies of the leased
+network(s) receive a payout per share of the network value of their
+company’s leased network. E.g., if the acting company leased network
+of a total value of 2 from the green company and a total value of
+3 from the yellow company, and Player A had 2 shares in the green
+company and 1 in the yellow company, they would receive a payout of
+\$7 (Green: 2 x \$2, Yellow: 1 x \$3, Total: \$7).
+\end{enumerate}
+\item Upkeep
+\begin{enumerate}
+\item For each unauctioned share they control, they must pay \$1 to the
+share company’s treasury.
+\item If they cannot afford to pay this upkeep cost, they must put one of
+their unauctioned shares into the bank pool, and take the company's
+current share value (\ref{enu:Share-value}) from the bank and put
+in the company's treasury
+\end{enumerate}
+\end{enumerate}
+
+\subsection{Pass}\label{subsec:Pass}
+\begin{enumerate}
+\item If a player chooses to pass, they do nothing, and play continues to
+the next player in turn order. If all players pass consecutively,
+the game ends immediately (\ref{subsec:Game-End-Triggers}).
+\end{enumerate}
+
+\section{Game End}\label{sec:Game-End}
+
+\subsection{Triggers}\label{subsec:Game-End-Triggers}
+\begin{enumerate}
+\item The game ends when one of the following conditions have been met:
+\begin{enumerate}
+\item A company has had all of its shares auctioned off
+\begin{enumerate}
+\item In this event, all players besides the current turn players (the player
+who triggered the game's end) get one more turn, and then a final
+round is played, starting with the player who triggered the end game.
+\end{enumerate}
+\item All players pass consecutively
+\begin{enumerate}
+\item In this event, the game ends immediately.
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+
+\subsection{Scoring}
+\begin{enumerate}
+\item The winner of the game is the player with the highest \noun{Net Worth}.
+A players net worth is the sum of the following:
+\begin{enumerate}
+\item Their cash
+\item The Share Value of all their owned shares (\ref{enu:Share-control-own}).
+\begin{enumerate}
+\item Unauctioned shares are worth nothing.
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+
+\end{document}

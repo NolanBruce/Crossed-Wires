@@ -1,0 +1,151 @@
+{
+  "meta": {
+    "id": "CubePrototype",
+    "slug": "CubePrototype"
+  },
+  "info": {
+    "title": "Cube",
+    "subtitle": "Prototype",
+    "designer": "Nolan Bruce-Williams",
+    "orientation": "vertical",
+    "titleY": -30,
+    "titleX": 50,
+    "titleSize": 160,
+    "subtitleSize": 33,
+    "designerSize": 20
+  },
+  "prototype": true,
+  "bank": "∞",
+  "colors": {
+    "maroon": "#873260",
+	"bright-orange": "#FF7518",
+	"dark-red": "#D20A2E",
+	"bright-lavender": "#D3D3FF"
+  },
+  "players": [],
+  "tiles": {},
+  "rounds": [],
+  "stock": {
+    "type": "1D",
+    "market": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+	  12,
+	  13,
+	  14,
+	  15,
+	  16,
+	  17,
+	  18,
+	  19,
+      20,
+      21,
+	  22,
+	  23,
+	  24,
+	  25,
+	  26,
+	  27,
+	  28,
+	  29,
+	  30
+    ]
+  },
+  "trains": [],
+  "turns": [],
+  "phases": [],
+  "tokenTypes": {
+    "default": []
+  },
+  "shareTypes": {
+    "default": [
+      {
+        "quantity": 6
+      }
+    ]
+  },
+  "companies": [
+    {
+      "color": "yellow",
+      "token": {
+        "bar": true,
+        "barHeight": 18,
+		"color": "red"
+      }
+    },
+    {
+      "color": "bright-orange",
+      "token": {
+        "bar": true,
+        "barHeight": 18,
+		"color": "red"
+      }
+    },
+    {
+      "color": "dark-red",
+      "token": {
+        "bar": true,
+        "barHeight": 18,
+		"color": "red"	
+      }
+    },
+    {
+      "color": "maroon",
+      "token": {
+        "bar": true,
+        "barHeight": 18,
+		"color": "red"
+      }
+    },
+    {
+      "color": "green",
+      "token": {
+        "bar": true,
+        "barHeight": 18,
+		"color": "red"
+      }
+    },
+    {
+      "color": "lavender",
+      "token": {
+        "bar": true,
+        "barHeight": 18,
+		"color": "red"
+      }
+    },
+    {
+      "color": "white",
+      "token": {
+        "bar": true,
+        "barHeight": 18,
+		"color": "red"
+      }
+    },
+    {
+      "color": "blue",
+      "token": {
+        "bar": true,
+        "barHeight": 18,
+		"color": "red"
+      }
+    }
+  ],
+  "map": {
+	"name": "Cube Prototype",
+    "hexes": [
+      {
+        "color": "grey",
+        "cities": [],
+        "track": [],
+        "hexes": [
+          "A7"
+        ]
+      }
+	]
+  }
+}
