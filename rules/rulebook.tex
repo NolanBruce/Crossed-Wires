@@ -12,6 +12,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 % Enumerate numbering 
 \usepackage{enumitem}
+\usepackage{pdfpages}
+
 
 \setlist[enumerate,1]{%
   label=\thesubsubsection.\arabic*,
@@ -31,7 +33,7 @@
 
 \fancyhf{} % clear all header/footer fields
 
-\fancyfoot[C]{Rulebook v0.2.2 — \DTMtoday}
+\fancyfoot[C]{Rulebook v0.2.3 — \DTMtoday}
 \fancyfoot[R]{\thepage}
 
 \renewcommand{\headrulewidth}{0pt}
@@ -41,6 +43,8 @@
 
 \usepackage{babel}
 \begin{document}
+\includepdf{cover.png}
+\pagebreak
 
 \section{Overview}
 
@@ -59,6 +63,31 @@ via leasing rival companies' infrastructures.\\
 The game end is triggered when either a) all shares of one company
 have been issued or b) all players pass consecutively.
 \end{enumerate}
+
+\subsection{Components}
+\begin{itemize}
+\item 36 Shares
+\begin{itemize}
+\item 6 per company: 1 for company charter, 5 for player shares
+\end{itemize}
+\item 120 wooden cubes
+\begin{itemize}
+\item 20 per company
+\end{itemize}
+\item Money
+\begin{itemize}
+\item Poker chips recommended
+\end{itemize}
+\item Hex value markers
+\begin{itemize}
+\item Rules describe stacked chips, but wooden cubes will do
+\end{itemize}
+\item Map
+\begin{itemize}
+\item Included file is scaled to mini-chips hex value markers. Adjust if
+needed.
+\end{itemize}
+\end{itemize}
 
 \subsection{Key Concepts}
 
