@@ -33,7 +33,7 @@
 
 \fancyhf{} % clear all header/footer fields
 
-\fancyfoot[C]{Rulebook v0.2.3 — \DTMtoday}
+\fancyfoot[C]{Rulebook v0.2.4 — \DTMtoday}
 \fancyfoot[R]{\thepage}
 
 \renewcommand{\headrulewidth}{0pt}
@@ -128,12 +128,12 @@ value of \$5.
 \item \label{enu:Share-auctioned-status}Each share is dual sided. The side
 that is currently face up indicates what type of share it is:
 \begin{enumerate}
-\item One side has an empty circle on it, indicating initial investor equity.
-These represent unissued shares that have not been sold to raise company
-capital.
-\item The opposite side has a red circle with a bar through it, indicating
-an issued share. Once a share has been issued, it may not be issued
-again.
+\item \label{enu:unissued-shares}One side has an empty circle on it, indicating
+initial investor equity. These represent unissued shares that have
+not been sold to raise company capital.
+\item \label{enu:issued-shares}The opposite side has a red circle with
+a bar through it, indicating an issued share. Once a share has been
+issued, it may not be issued again.
 \end{enumerate}
 \item \label{enu:Share-control-own}A player \noun{controls} all shares
 in their player area, but only issued shares count towards final scoring.
@@ -170,9 +170,11 @@ game.
 
 \subsection{Player Setup}\label{subsec:Player-Setup}
 \begin{enumerate}
-\item Each player takes all 5 remaining shares of one company in the game
-and places them in their player area: 4 on their unissued side, and
-1 on its issued side (\ref{enu:Share-auctioned-status}).
+\item Each player takes 4 shares of one company in the game and places them
+in their player area on their unissued side (\ref{enu:unissued-shares}).
+\item Each player takes the remaining 1 share of the starting company of
+the player to their right and places it in their player area on its
+issued side (\ref{enu:issued-shares}).
 \item Each player takes \$25 in starting cash.
 \end{enumerate}
 
