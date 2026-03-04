@@ -1,0 +1,92 @@
+%% LyX 2.4.4 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[american,twocolumn]{article}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}
+\pagestyle{empty}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+
+\usepackage{txfonts}
+\usepackage{enumitem}
+\setlist{nosep}
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+
+\section*{Auction}
+\begin{itemize}
+\item Choose
+\begin{itemize}
+\item Unissued share you control
+\item Share in the bank pool
+\end{itemize}
+\item Minimum bid = total company network value
+\item In clockwise order, raise or pass (no re-entry)
+\item Winner receives issued share
+\end{itemize}
+
+\subsection*{Winning Bid}
+\begin{itemize}
+\item Unissued share → Winning bid to company treasury
+\item Bank share → Winning bid to bank
+\item No bids → Share to bank pool; company treasury receives share value
+from bank
+\end{itemize}
+
+\section*{Act for Company}
+\begin{itemize}
+\item Must control share (issued or unissued)
+\item All costs from company treasury
+\end{itemize}
+
+\subsection*{Expand Network}
+\begin{itemize}
+\item Build on accessible, uncontrolled hex
+\begin{itemize}
+\item Can only build on one type of hex on a turn
+\item Total value built this turn \ensuremath{\le} number of issued shares
+\end{itemize}
+\item Cost: \$5 x chosen hex value
+\item Place number of chips equal to hex value and company cube on top
+\item If expanding to city, payout per share = hex value
+\end{itemize}
+
+\subsubsection*{Lease Network}
+\begin{itemize}
+\item Must use shortest route
+\item Cost = total value of hexes used
+\item Payout per share of leased companies = leased hex(es) value
+\end{itemize}
+
+\subsection*{Upkeep}
+\begin{itemize}
+\item Pay \$1 per unissued share from personal cash to company
+\begin{itemize}
+\item If unable, move one unissued share to bank pool and place share value
+from bank in company treasury
+\end{itemize}
+\end{itemize}
+
+\section*{Pass}
+\begin{itemize}
+\item Do nothing
+\end{itemize}
+
+\section*{Game End}
+\begin{itemize}
+\item If all players consecutively pass, game ends immediately
+\item If last share of any company is issued, play two more rounds, ending
+before player who issued final share
+\item Final Score is sum of
+\begin{itemize}
+\item Cash
+\item Value of issued shares
+\end{itemize}
+\end{itemize}
+
+\end{document}
