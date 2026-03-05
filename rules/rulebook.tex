@@ -2,6 +2,7 @@
 %% Do not edit unless you really know what you are doing.
 \documentclass[american,twocolumn]{article}
 \usepackage[T1]{fontenc}
+\usepackage{textcomp}
 \usepackage[utf8]{inputenc}
 
 \makeatletter
@@ -37,7 +38,7 @@
 
 \fancyhf{} % clear all header/footer fields
 
-\fancyfoot[C]{Rulebook v0.2.4 — \DTMtoday}
+\fancyfoot[C]{Rulebook v0.2.5 — \DTMtoday}
 \fancyfoot[R]{\thepage}
 
 \renewcommand{\headrulewidth}{0pt}
@@ -135,12 +136,17 @@ that is currently face up indicates what type of share it is:
 \item \label{enu:unissued-shares}One side has an empty circle on it, indicating
 initial investor equity. These represent unissued shares that have
 not been sold to raise company capital.
+\begin{enumerate}
+\item An issued share that has been rotated 90° indicates it has been leveraged
+(\ref{subsec:Leverage-Share}).
+\end{enumerate}
 \item \label{enu:issued-shares}The opposite side has a red circle with
 a bar through it, indicating an issued share. Once a share has been
 issued, it may not be issued again.
 \end{enumerate}
 \item \label{enu:Share-control-own}A player \noun{controls} all shares
-in their player area, but only issued shares count towards final scoring.
+in their player area, but only issued shares that aren't leveraged
+count towards final scoring.
 \end{enumerate}
 
 \subsubsection{Payouts}\label{subsec:Payouts}
@@ -190,6 +196,7 @@ issued side (\ref{enu:issued-shares}).
 \begin{enumerate}
 \item Auction (\ref{subsec:Auction})
 \item Act for a Company (\ref{subsec:Act-for-company})
+\item Leverage Share\ref{subsec:Leverage-Share}
 \item Pass (\ref{subsec:Pass})
 \end{enumerate}
 \item After a player has taken one of these, the player to their left takes
@@ -266,9 +273,9 @@ value.
 \end{enumerate}
 \item Finally perform Upkeep
 \begin{enumerate}
-\item For each unissued share the turn player controls, they must pay \$1
-to the share company’s treasury. This represents the cost of retaining
-ownership that has not yet been sold to raise capital.
+\item For each unissued or leveraged share the turn player controls, they
+must pay \$1 to the share company’s treasury. This represents the
+cost of retaining ownership that has not yet been sold to raise capital.
 \begin{enumerate}
 \item This comes from the player's personal treasury, not the company they're
 acting for.
@@ -307,6 +314,14 @@ who control a share for a company whose network was leased receive
 a payout per share of the total value of the company's leased network.
 \end{enumerate}
 
+\subsection{Leverage Share}\label{subsec:Leverage-Share}
+\begin{enumerate}
+\item When leveraging a share, the turn player selects one issued share
+they control and rotates it 90° to indicate it has been leveraged
+and immediately takes from the bank cash equal to the leveraged shares
+current values (\ref{enu:Share-value}).
+\end{enumerate}
+
 \subsection{Pass}\label{subsec:Pass}
 \begin{enumerate}
 \item If a player chooses to pass, they do nothing, and play continues to
@@ -339,7 +354,7 @@ round is played, starting with the player who triggered the end game.
 A players net worth is the sum of the following:
 \begin{enumerate}
 \item Their cash
-\item The Share Value of all issued shares they control (\ref{enu:Share-control-own}).
+\item The Share Value of all issued, non-leveraged shares they control (\ref{enu:Share-control-own}).
 \begin{enumerate}
 \item Unissued shares are worth nothing.
 \end{enumerate}
