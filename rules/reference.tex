@@ -1,6 +1,6 @@
 %% LyX 2.4.4 created this file.  For more info, see https://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[american,twocolumn]{article}
+\documentclass[12pt,american,twocolumn]{article}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage[utf8]{inputenc}
@@ -11,6 +11,12 @@
 
 \usepackage{txfonts}
 \usepackage{enumitem}
+\usepackage[left=0.70in, right=0.70in, top=0.70in, bottom=0.70in,
+  headsep=0pt,% remove space between header and text body
+  headheight=17pt% suggested by fancyhdr
+  ]{geometry}
+
+
 \setlist{nosep}
 
 \makeatother
@@ -30,7 +36,7 @@
 \item Winner receives issued share
 \end{itemize}
 
-\subsection*{Winning Bid}
+\subsubsection*{Winning Bid}
 \begin{itemize}
 \item Unissued share → Winning bid to company treasury
 \item Bank share → Winning bid to bank
@@ -38,13 +44,13 @@
 from bank
 \end{itemize}
 
-\section*{Act for Company}
+\subsubsection*{Act for Company}
 \begin{itemize}
 \item Must control share (issued or unissued)
 \item All costs from company treasury
 \end{itemize}
 
-\subsection*{Expand Network}
+\subsubsection*{Expand Network}
 \begin{itemize}
 \item Build on accessible, uncontrolled hex
 \begin{itemize}
@@ -56,20 +62,27 @@ from bank
 \item If expanding to city, payout per share = hex value
 \end{itemize}
 
-\subsubsection*{Lease Network}
+\paragraph*{Lease Network}
 \begin{itemize}
 \item Must use shortest route
 \item Cost = total value of hexes used
 \item Payout per share of leased companies = leased hex(es) value
 \end{itemize}
 
-\subsection*{Upkeep}
+\subsubsection*{Upkeep}
 \begin{itemize}
-\item Pay \$1 per unissued share from personal cash to company
+\item Pay \$1 per unissued or leveraged share from personal cash to company
 \begin{itemize}
 \item If unable, move one unissued share to bank pool and place share value
 from bank in company treasury
 \end{itemize}
+\end{itemize}
+
+\section*{Leverage Share}
+\begin{itemize}
+\item Rotate issued share 90° to indicate it's been leveraged and receive
+from the bank cash = share value
+\item Leveraged share require upkeep cost and are worth nothing at end-game
 \end{itemize}
 
 \section*{Pass}
@@ -85,8 +98,8 @@ before player who issued final share
 \item Final Score is sum of
 \begin{itemize}
 \item Cash
-\item Value of issued shares
+\item Value of issued, non-leveraged shares
 \end{itemize}
 \end{itemize}
-
+\newpage
 \end{document}
