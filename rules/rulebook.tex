@@ -1,6 +1,6 @@
 %% LyX 2.4.4 created this file.  For more info, see https://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[american,twocolumn]{article}
+\documentclass[11pt,letterpaper,american,twocolumn]{article}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage[utf8]{inputenc}
@@ -8,6 +8,8 @@
 \makeatletter
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\special{papersize=\the\paperwidth,\the\paperheight}
+
 \newcommand{\noun}[1]{\textsc{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
@@ -16,9 +18,12 @@
 \usepackage{pdfpages}
 \usepackage{txfonts}
 \usepackage{enumitem}
+\usepackage[left=0.70in, right=0.70in, top=0.70in, bottom=0.70in,
+  headsep=0pt,% remove space between header and text body
+  headheight=17pt% suggested by fancyhdr
+  ]{geometry}
+
 \setlist{nosep}
-
-
 
 \setlist[enumerate,1]{%
   label=\thesubsubsection.\arabic*,
