@@ -43,7 +43,7 @@
 
 \fancyhf{} % clear all header/footer fields
 
-\fancyfoot[C]{Rulebook v0.2.5 — \DTMtoday}
+\fancyfoot[C]{Rulebook v0.2.6 — \DTMtoday}
 \fancyfoot[R]{\thepage}
 
 \renewcommand{\headrulewidth}{0pt}
@@ -76,9 +76,13 @@ have been issued or b) all players pass consecutively.
 
 \subsection{Components}
 \begin{itemize}
-\item 36 Shares
+\item 6 charters
 \begin{itemize}
-\item 6 per company: 1 for company charter, 5 for player shares
+\item 1 per company
+\end{itemize}
+\item 30 Shares
+\begin{itemize}
+\item 5 per company
 \end{itemize}
 \item 120 wooden cubes
 \begin{itemize}
@@ -176,8 +180,8 @@ happens in two scenarios:
 \begin{enumerate}
 \item For each player in the game, prepare one company
 \begin{enumerate}
-\item Put one share above the map to act as the company charter.
-\item Place \$5 on the company charter as the company’s starting treasury.
+\item Put the company's charter above the map.
+\item Place \$5 in the company’s treasury on the charter.
 \end{enumerate}
 \item Return remaining companies to the box. They will not be used this
 game.
@@ -185,11 +189,9 @@ game.
 
 \subsection{Player Setup}\label{subsec:Player-Setup}
 \begin{enumerate}
-\item Each player takes 4 shares of one company in the game and places them
-in their player area on their unissued side (\ref{enu:unissued-shares}).
-\item Each player takes the remaining 1 share of the starting company of
-the player to their right and places it in their player area on its
-issued side (\ref{enu:issued-shares}).
+\item Each player takes all shares of one company in the game and places
+them in their player area: 4 on their unissued side, and 1 on its
+issued side (\ref{enu:unissued-shares}).
 \item Each player takes \$25 in starting cash.
 \end{enumerate}
 
@@ -267,7 +269,7 @@ the number of shares issued for the company.
 \item Choose a target hex the company has access to (\ref{enu:hex-access})
 that no company controls.
 \item Choose a hex value (\ref{enu:Hex-value}).
-\item Pay \$5 x that value from the company treasury to the bank.
+\item Pay \$4 x that value from the company treasury to the bank.
 \item Stack a number of chips equal to the chosen value on the target hex.
 \item Place one cube for the company on top of the stack of chips, indicating
 the company now controls that hex.
@@ -304,11 +306,12 @@ onto a hex it otherwise does not have access to (\ref{enu:hex-access})
 by tracing a route from any part of its own network through the leased
 network(s) to an empty hex.
 \item The route through the leased network(s) must follow the shortest route
-from any combination of networks to the target hex. Therefore, if
-a company already has access to a given hex, it may not lease network
+through any combination of networks to the target hex. Therefore,
+if a company already has access to a given hex, it may not lease network
 to said hex.
-\item The cost of leasing network is the combined network value of the hexes
-used. The company must pay this value to the bank.
+\item The cost of leasing network is the network value of the hexes used.
+The acting company must pay this value to the owner(s) of the leased
+network, equal to the value of their leased network.
 \begin{enumerate}
 \item If they cannot afford this cost, they cannot take the action.
 \item If after leasing network, the company does not have enough money to
