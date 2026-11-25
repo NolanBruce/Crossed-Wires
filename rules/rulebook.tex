@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage[utf8]{inputenc}
+\usepackage{array}
 
 \makeatletter
 
@@ -11,6 +12,8 @@
 \special{papersize=\the\paperwidth,\the\paperheight}
 
 \newcommand{\noun}[1]{\textsc{#1}}
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 % Enumerate numbering 
@@ -181,7 +184,7 @@ happens in two scenarios:
 \item For each player in the game, prepare one company
 \begin{enumerate}
 \item Put the company's charter above the map.
-\item Place \$5 in the company’s treasury on the charter.
+\item Place \$5 on the charter in the company’s treasury.
 \end{enumerate}
 \item Return remaining companies to the box. They will not be used this
 game.
@@ -192,8 +195,23 @@ game.
 \item Each player takes all shares of one company in the game and places
 them in their player area: 4 on their unissued side, and 1 on its
 issued side (\ref{enu:unissued-shares}).
-\item Each player takes \$25 in starting cash.
+\item Each player takes the starting cash for the current player count.
 \end{enumerate}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 
+Players & Starting Cash\tabularnewline
+\hline 
+3 & \$25\tabularnewline
+\hline 
+4 & \$25\tabularnewline
+\hline 
+5 & \$20\tabularnewline
+\hline 
+6 & \$20\tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
 
 \section{Gameplay}\label{sec:Gameplay}
 
